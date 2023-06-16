@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Dashboard\PostController;
 use App\Http\Controllers\Dashboard\TestController;
 use Illuminate\Support\Facades\Route;
 //forma uno
@@ -20,24 +21,17 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-//vista con controlador, testController>clase index y valores desde la BD
-Route::get('/test', [TestController::class, 'index']);
+//forma semi automatica de crearlas a base del controlador principal
 
-//vista con nombre
-Route::get('/contacto', function () {
-    return "contactame";
-})->name('contacto');
+Route::resource('post', PostController::class);
 
-//vista con datos desde el web
-Route::get('/inicio', function () {
+//forma manual de crear rutas
 
-    $msj="saludo desde el back de laravel";
+/* Route::get('post', [PostController::class, 'index']);
+Route::get('post/{post}', [PostController::class, 'show']);
+Route::get('post/create', [PostController::class, 'create']);
+Route::get('post/{post}/edit', [PostController::class, 'edit']);
 
-    $data = [
-        'msj'=> $msj,
-        'edad' => 15
-    ];
-
-    return view('inicio', $data);
-});
-
+Route::post('post', [PostController::class, 'store']);
+Route::put('post/{post}', [PostController::class, 'edit']);
+Route::delete('post/{post}', [PostController::class, 'delete']); */
