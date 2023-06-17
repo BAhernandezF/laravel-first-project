@@ -17,7 +17,13 @@
             @foreach ($posts as $p)
             <tr>
                 <td>{{ $p->title }}</td>
-                <td>Categoria</td>
+                <td>
+                    @if($p->category_id == 1) 
+                        Cate1
+                    @elseif($p->category_id == 2)
+                        Cate2
+                    @endif
+                </td>
                 <td>{{ $p->posted }}</td>
                 <td>
                     <a href="{{ route('post.edit', $p) }}">Editar</a>
