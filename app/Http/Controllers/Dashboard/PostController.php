@@ -77,7 +77,7 @@ class PostController extends Controller
     public function update(PutRequest $request, Post $post)
     {
         $post->update($request->validated());
-
+        $request->session()->flash('status', "Registro actualizado");
         return to_route('post.index');
     }
 

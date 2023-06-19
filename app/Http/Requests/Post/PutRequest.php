@@ -32,9 +32,10 @@ class PutRequest extends FormRequest
      */
     public function rules(): array
     {
+
         return [
             "title" => "required|min:5|max:500",
-            /* "slug" => "required|min:5|max:500|unique:posts", */
+            "slug" => "required|min:5|max:500|unique:posts,slug,".$this->route("post")->id,
             "category_id" => "required|integer",
             "content" => "required|min:10",
             "description" => "required|min:10",

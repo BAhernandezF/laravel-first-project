@@ -25,4 +25,4 @@
 <label for="">Descripcion</label>
 <textarea name="description">{{ old("description", $post->description) }}</textarea>
 
-<button type="submit">Crear</button>
+
