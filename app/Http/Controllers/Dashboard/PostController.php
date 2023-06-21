@@ -20,7 +20,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::paginate(2);
+        $posts = Post::simplePaginate(2);
         return view('dashboard.post.index',compact('posts'));
     }
 
@@ -76,9 +76,20 @@ class PostController extends Controller
      */
     public function update(PutRequest $request, Post $post)
     {
-        $post->update($request->validated());
-        $request->session()->flash('status', "Registro actualizado");
-        return to_route('post.index');
+
+        $data = $request->validated();
+
+        if( isset($data["image"])){
+
+            $data["image"] = $filename = time()."_".date("d_m_Y").".".$data["image"]->extension();
+
+            $request->image->move(public_path("image"), $filename);
+        }
+
+
+        $post->update($data);
+        //$request->session()->flash('status', "Registro actualizado");
+        return to_route('post.index')->with('status', 'Registro Actualizado.');
     }
 
     /**

@@ -17,11 +17,7 @@
             <tr>
                 <td>{{ $p->title }}</td>
                 <td>
-                    @if($p->category_id == 1) 
-                        Cate1
-                    @elseif($p->category_id == 2)
-                        Cate2
-                    @endif
+                    {{ $p->category->title }}
                 </td>
                 <td>{{ $p->posted }}</td>
                 <td>
