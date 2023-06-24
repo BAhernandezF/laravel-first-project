@@ -16,10 +16,15 @@ class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
+     * 
      */
+
+    
+
+
     public function index()
     {
-        $categories = category::simplePaginate(2);
+        $categories = category::Paginate(2);
         return view('dashboard.category.index',compact('categories'));
     }
 

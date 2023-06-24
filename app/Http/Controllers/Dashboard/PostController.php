@@ -20,7 +20,7 @@ class PostController extends Controller
      */
     public function index()
     {
-        $posts = Post::simplePaginate(2);
+        $posts = Post::Paginate(2);
         return view('dashboard.post.index',compact('posts'));
     }
 

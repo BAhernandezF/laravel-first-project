@@ -1,0 +1,61 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/************* tabla */
+
+.main-table{
+    @apply table-auto w-full
+}
+
+.main-table th{
+    @apply px-6 py-2 bg-gray-50 font-medium text-gray-500 uppercase border leading-4 tracking-widest
+}
+
+.main-table tr{
+    @apply border 
+}
+
+.main-table td{
+    @apply px-6 py-4 whitespace-normal 
+}
+
+/************* tabla */
+
+/************* form */
+
+.formulario-base{
+    @apply flex justify-center
+}
+
+.form-control{
+    @apply rounded-sm shadow-sm bg-green-50 w-full 
+}
+
+.contenedor-a{
+    @apply bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4 max-w-2xl
+
+}
+
+.margen-form{
+    @apply w-full 
+}
+
+/************* form */
+
+/************* titulo */
+.titulos-form{
+    @apply flex justify-center w-full
+}
+/************* titulo */
+
+/************* botones */
+.botones-form{
+    @apply flex justify-center w-full
+}
+/************* botones */
+
+
+
+
+

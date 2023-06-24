@@ -2,10 +2,9 @@
 
 @section('content')
 
+
     <a type="button" href="{{ route('category.create') }}">Crear</a>
-    <br>
-    <br>
-    <a type="button" href="{{ route('post.index') }}">Ir a Post</a>
+
     <table>
         <thead>
             <tr>
