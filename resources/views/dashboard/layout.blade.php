@@ -31,8 +31,12 @@
         @if (session('status'))
             {{ session('status') }}
         @endif
-        <br>
-        @yield('content')
+        <div class="container mx-auto">
+            <div class="card card-white mt-5">
+                @yield('content')
+            </div>
+        </div>
+        
     </div>
     
 </body>

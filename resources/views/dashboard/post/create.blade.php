@@ -9,7 +9,10 @@
     {{-- esto siempre debe ir con un punto en la ruta, ejemplo: post.store --}}
     <form action="{{ route('post.store') }}" method="POST">
         @include('dashboard.post._form')
-        <button class="botones-form" type="submit">Crear</button>
+        <div class="py-5 px-10 mx-0 min-w-full flex flex-col items-center">
+            <button class="botones-form btn boton-success" type="submit">Crear</button>
+        </div>
+        
     </form>
 
 @endsection

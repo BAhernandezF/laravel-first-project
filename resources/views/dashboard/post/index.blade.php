@@ -3,7 +3,7 @@
 @section('content')
 
 
-    <a type="button" href="{{ route('post.create') }}">Crear Post</a>
+    <a class="btn boton-success my-3" type="button" href="{{ route('post.create') }}">Crear Post</a>
 
     <table class="main-table">
         <thead>
@@ -22,15 +22,14 @@
                     {{ $p->category->title }}
                 </td>
                 <td>{{ $p->posted }}</td>
-                <td>
-                    <a href="{{ route('post.edit', $p) }}">Editar</a>
-                    <a href="{{ route('post.show', $p) }}">Ver</a>+
+                <td class="min-w-full flex flex-row items-center" >
+                    <a class="btn boton-editar my-3" href="{{ route('post.edit', $p) }}">Editar</a>
+                    <a class="btn boton-ver my-3" href="{{ route('post.show', $p) }}">Ver</a>
                     <form action="{{ route('post.destroy', $p) }}" method="POST">
                         @csrf
                         @method("DELETE")
-                        <button type="submit">Eliminar</button>
+                        <button class="btn boton-danger my-3" type="submit">Eliminar</button>
                     </form>
-
                 </td>
             </tr>
             @endforeach

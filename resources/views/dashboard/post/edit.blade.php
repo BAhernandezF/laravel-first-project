@@ -10,7 +10,10 @@
         <form action="{{ route('post.update',$post->id) }}" method="POST" enctype="multipart/form-data">
             @method('PATCH')
             @include('dashboard.post._form',["task" => "edit"])
-            <button class="botones-form" type="submit">Editar</button>
+            <div class="py-5 px-10 mx-0 min-w-full flex flex-col items-center">
+                <button class="botones-form btn boton-success" type="submit">Editar</button>
+            </div>
+            
         </form>
     </article>
 @endsection

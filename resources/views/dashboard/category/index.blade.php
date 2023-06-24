@@ -3,9 +3,9 @@
 @section('content')
 
 
-    <a type="button" href="{{ route('category.create') }}">Crear</a>
+    <a class="btn boton-success my-3" type="button" href="{{ route('category.create') }}">Crear</a>
 
-    <table>
+    <table class="main-table">
         <thead>
             <tr>
                 <th>Titulo</th>
@@ -15,14 +15,14 @@
         <tbody>
             @foreach ($categories as $c)
             <tr>
-                <td>{{ $c->title }}</td>
-                <td>
-                    <a href="{{ route('category.edit', $c) }}">Editar</a>
-                    <a href="{{ route('category.show', $c) }}">Ver</a>+
+                <td >{{ $c->title }}</td>
+                <td class="min-w-full flex flex-row items-center" >
+                    <a class=" btn boton-editar my-2" href="{{ route('category.edit', $c) }}">Editar</a>
+                    <a class=" btn boton-ver my-2" href="{{ route('category.show', $c) }}">Ver</a>
                     <form action="{{ route('category.destroy', $c) }}" method="POST">
                         @csrf
                         @method("DELETE")
-                        <button type="submit">Eliminar</button>
+                        <button class="btn boton-danger my-2" type="submit">Eliminar</button>
                     </form>
 
                 </td>
